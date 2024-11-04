@@ -3,6 +3,10 @@
 }
 
 body {
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,10 +15,7 @@ body {
   font-style: normal;
   font-size: 20px;
   line-height: 150%;
-  background-color: #dff6f6;
-  background-image: url("../img/bg.png");
-  background-size: 800px;
-  background-repeat: repeat;
+  background-image: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
   color: #305050;
 }
 
@@ -62,7 +63,7 @@ h1 {
 
 .word-in-progress {
   letter-spacing: 15px;
-  color: #28bdbd;
+  color: white;
   font-size: 30px;
 }
 

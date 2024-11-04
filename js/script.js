@@ -12,7 +12,7 @@ let guessedLetters = []; //array to contain all guessed letters
 let remainingGuesses = 8;
 
 const getWord = async function () {
-    const res = await fetch("https://gist.githubusercontent.com/skillcrush-curriculum/7061f1d4d3d5bfe47efbfbcfe42bf57e/raw/5ffc447694486e7dea686f34a6c085ae371b43fe/words.txt")
+    const res = await fetch("https://gist.githubusercontent.com/rabi-b/fa318f683c4adc7581ed4edb7091b13c/raw/7da0770d56b69344a9cf50795a92d16f73398192/african-countries.txt")
     const words = await res.text();
     console.log(words);
     const wordArray = words.split("\n");
@@ -107,10 +107,10 @@ const updateWordProgress = function (guessedLetters) {
 const countRemainingGuesses = function (guess) {
     const upperWord = word.toUpperCase();
     if (!upperWord.includes(guess)) {
-        guessMessage.innerText = `The word doesn't contain a ${guess}. Try again!`;
+        guessMessage.innerText = `The country doesn't contain a ${guess}. Try again!`;
         remainingGuesses -= 1;
     } else {
-        guessMessage.innerText = `Good guess! The word has the letter ${guess}.`;
+        guessMessage.innerText = `Good guess! The country has the letter ${guess}.`;
     }
 
     if (remainingGuesses === 0) {
@@ -126,7 +126,7 @@ const countRemainingGuesses = function (guess) {
 const checkWin = function () {
     if (wordInProgress.innerText === word.toUpperCase()) {
         guessMessage.classList.add("win");
-        guessMessage.innerHTML = `<p class="highlight">You guessed the word correctly! Congrats!</p>`;
+        guessMessage.innerHTML = `<p class="highlight">You guessed the country correctly! Congrats!</p>`;
     };
 };
 
